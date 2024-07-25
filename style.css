@@ -1,0 +1,120 @@
+body{
+    color: white;
+    background: #1e5580;
+}
+.tab.current-tab {
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+   
+}
+
+.btn{
+    
+    background-color: #1e5580;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.grant-btn{
+    
+    color: white;
+    border: none;
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+    padding: 10px 30px;
+}
+.grant-location-container.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+
+}
+.grant-location-container{
+    display: none;
+}
+
+.user-info-container.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+.user-info-container{
+    display: none;
+}
+.loading-container.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loading-container {
+    display: none;
+}
+.form-container.active{
+    display: block;
+    margin: auto;
+    width: 30%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    /* gap: 10px; */
+    padding: 5px;
+    right: 2%;
+}
+.form-container{
+    display: none;
+}
+.card-container{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+.parameter{
+    background-color:rgba(219, 226, 239, 0.5);
+    width:150px;
+    height:150px;
+    border-radius: 5px;
+}
+
+
+.tab-container{
+    display: flex;
+    margin: auto; 
+    width: 40%;
+    justify-content: space-between; 
+     cursor: pointer;
+}
+
+@media(max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .form-container.active{
+        width: 80%;
+    }
+    .tab-container{
+        width: 70%;
+    }
+    .card-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .form-container.active{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+}
+.error-container.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.error-container{
+    display: none;
+}

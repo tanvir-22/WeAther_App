@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">   
+        <h1 style="text-align: center;text-transform: uppercase; padding: 5px;">Weather APP</h1>
+        <div class="tab-container" >
+            <p class="tab" data-userWeather style="padding: 10px;">Your Weather</p>
+            <p class="tab" data-searchWeather style="padding: 10px;" >Search Weather</p>
+
+        </div>
+        <div class="weather-container">
+            <!-- grant location container -->
+             <div class="grant-location-container">
+                <img src="./assets/location.png" alt="" width="60" height="60">
+                <p>grant location access</p>
+                <p>allow access to get weather information</p>
+                <button class="grant-btn" data-grantAccess>Grant access</button>
+
+             </div>
+             <!-- search form -->
+              <form class="form-container" data-searchform > 
+                <input type="text"  placeholder="search for city ... "data-searchInput style="width: 100%;height: 40px; border-radius: 7px;">
+                <button class="btn" search-btn type="submit" >
+                    <img src="./assets/search.png" alt="" width="20" height="20">
+                </button>
+              </form>
+              <!-- loading screen container -->
+            <div class="loading-container" >
+                <img src="./assets/loading.gif" alt="load" width="200px" height="200px">
+                <p>Loading</p>
+            </div>
+            <!-- show weather info -->
+             <div class="user-info-container">
+                    <div class="name">
+                        <h1 data-cityName></h1>
+                        <h2 data-countryName></h2 >
+                    </div>
+                    <!-- weather description -->
+
+                    <h4 data-weatherDesc></h4>
+                    <!-- weatherIcon -->
+                    <img src="" width="100px" height="100px"   alt=""    data-weatherIcon>
+                    <!-- weather temparature -->
+                    <h2 data-temp></h2>
+                    <div class="card-container">
+                        <!-- card-1 -->
+                         <div class="parameter">
+                            <img src="./assets/wind.png" alt="" width="50px" height="50px">
+                            <P>WINDSPEED</P>
+                            <P data-windSpeed></P>
+                         </div>
+                         <div class="parameter">
+                            <img src="./assets/humidity.png" alt="" width="50px" height="50px">
+                            <P>HUMIDITY</P>
+                            <P data-humidity></P>
+                         </div>
+                         <div class="parameter">
+                            <img src="./assets/cloud.png" alt="" width="50px" height="50px">
+                            <P>CLOUDS</P>
+                            <P data-cloud></P>
+                         </div>
+                    </div>
+             </div>
+
+             <div class="error-container">
+                <img src="./assets/not-found.png" alt="" width="200px" height="200px" style="margin-top: 8%;">
+                <h2>Bad Query</h2>
+             </div>
+
+        </div>
+    </div>
+
+
+    
+</body>
+<script src="./script.js"></script> 
+</html>
