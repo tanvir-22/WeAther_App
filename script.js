@@ -69,7 +69,7 @@ async function fetchuserWeatherInfo(coordinates){
     loadingScreen.classList.add("active");
     try{
             console.log(lat,lon);
-            const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${Api_key}&q=${lat},${lon}`);
+            const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${Api_key}&q=${lat},${lon}`);
             const data  = await response.json();
             loadingScreen.classList.remove("active");
             userInfoContainer.classList.add("active");
@@ -172,7 +172,7 @@ async function fetchSearchWeatherInfo(name)
     grantAccessContainer.classList.remove("active");
 
     try{
-        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${Api_key}&q=${name}`)
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${Api_key}&q=${name}`)
         const searchData = await response.json();
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
