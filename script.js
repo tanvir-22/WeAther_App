@@ -5,7 +5,7 @@ const grantAccessContainer = document.querySelector(".grant-location-container")
 const searchForm = document.querySelector('[data-searchform]');
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
-
+const errorContainer = document.querySelector(".error-container");
 
 let currentTab = userTab;
 const Api_key = `47d49b487d4044278f363137242407`;
@@ -62,7 +62,7 @@ function getFromSessionStorage()
         fetchuserWeatherInfo(coordinates);
     }
 }
-const errorContainer = document.querySelector(".error-container");
+
 
 async function fetchuserWeatherInfo(coordinates){
     // console.log(coordinates);
@@ -71,9 +71,11 @@ async function fetchuserWeatherInfo(coordinates){
     loadingScreen.classList.add("active");
     try{
             console.log(lat,lon);
-            const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${Api_key}&q=${lat},${lon}`);
+            const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${Api_key}&q=${lat},${lon}`);
             const data  = await response.json();
             loadingScreen.classList.remove("active");
+            errorContainer.classList.remove("active");
+
             userInfoContainer.classList.add("active");
             renderWeatherInfo(data);
     }
@@ -177,6 +179,8 @@ async function fetchSearchWeatherInfo(name)
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${Api_key}&q=${name}`)
         const searchData = await response.json();
         loadingScreen.classList.remove("active");
+        errorContainer.classList.remove("active");
+
         userInfoContainer.classList.add("active");
         renderWeatherInfo(searchData);
 
