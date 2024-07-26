@@ -77,7 +77,7 @@ async function fetchuserWeatherInfo(coordinates){
     }
  
     catch(err){
-        // loadingScreen.classList.remove("active");
+        loadingScreen.classList.remove("active");
         errorContainer.classList.add("active");
         console.log("error found in fetchuserWeatherInfo found !!",err);
 
@@ -181,6 +181,8 @@ async function fetchSearchWeatherInfo(name)
     }
     catch(e)
     {
+        loadingScreen.classList.remove("active");
+        errorContainer.classList.add("active");
         console.log("found error in fetchSearchWeatherInfo function",e);
     }
 
