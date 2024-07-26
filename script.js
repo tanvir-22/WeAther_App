@@ -103,6 +103,7 @@ function renderWeatherInfo(data){
 
         if(data?.location?.name==undefined){
             userInfoContainer.classList.remove("active");
+            loadingScreen.classList.remove("active");
         errorContainer.classList.add("active");
             
         }
