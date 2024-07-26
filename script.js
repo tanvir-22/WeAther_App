@@ -11,6 +11,8 @@ let currentTab = userTab;
 const Api_key = `47d49b487d4044278f363137242407`;
 currentTab.classList.add("current-tab");
 getFromSessionStorage();
+errorContainer.classList.remove("active");
+
 function switchTab(clickedTab){
 
         errorContainer.classList.remove("active");
